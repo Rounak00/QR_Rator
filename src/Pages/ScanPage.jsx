@@ -74,12 +74,15 @@ const Button=styled.button`
 const ScanPage = (props) => {
   const [data, setData] = useState('No result');
 
+ 
+
   return (
     <>
     <Container>
       <HeadItem>Scan your QR Code with QR-Rator</HeadItem>
       <Camera> 
               <QrReader
+              
               onResult={(result, error) => {
                 if (!!result) {
                   setData(result?.text);
@@ -90,7 +93,7 @@ const ScanPage = (props) => {
                 }
               }}
               style={{ width: '100%' , height:"100%" }}
-              constraints={{'torch' : true, facingMode: 'environment'}}
+              
             />  
       </Camera>
       <Result>
