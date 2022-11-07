@@ -90,6 +90,7 @@ const ScanPage = (props) => {
                 }
               }}
               style={{ width: '100%' , height:"100%" }}
+              constraints={{'torch' : true, facingMode: 'environment'}}
             />  
       </Camera>
       <Result>
