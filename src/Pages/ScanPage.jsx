@@ -73,7 +73,7 @@ const Button=styled.button`
 `
 const ScanPage = (props) => {
   const [data, setData] = useState('No result');
-
+  
  
 
   return (
@@ -83,17 +83,17 @@ const ScanPage = (props) => {
       <Camera> 
               <QrReader
               
-              onResult={(result, error) => {
-                if (!!result) {
-                  setData(result?.text);
-                }
+                onResult={(result, error) => {
+                  if (!!result) {
+                    setData(result?.text);
+                  }
 
-                if (!!error) {
-                  console.info(error);
-                }
-              }}
-              style={{ width: '100%' , height:"100%" }}
-              
+                  if (!!error) {
+                    console.info(error);
+                  }
+                }}
+                style={{ width: '100%' , height:"100%" }}
+                facingMode={'rear'}
             />  
       </Camera>
       <Result>
