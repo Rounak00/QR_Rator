@@ -12,6 +12,10 @@ const ContentBox=styled.div`
     align-items: center;
     justify-content: space-between;
 `
+const Camera=styled.div`
+   width: 400px;
+   height: 400px;
+`
 const FlexItem =styled.div`
     margin: 20px;
 `
@@ -33,12 +37,12 @@ const ScanPage = () => {
     <>
      <ContentBox>
         <FlexItem><Text>Scan QR using your camera</Text></FlexItem>
-        <QrReader
+         <Camera><QrReader
                          delay={300}
-                         style={{"width": "100%", "height":"100%"}}
+                         
                          onError={handleErrorWebCam}
                          onScan={handleScanWebCam}
-                         />
+                         /></Camera>
                          
         <FlexItem><Text>Scanned By WebCam Code: {scanResultWebCam}</Text></FlexItem>
       </ContentBox>  
