@@ -38,7 +38,7 @@ const ScanPage = () => {
      <ContentBox>
         <FlexItem><Text>Scan QR using your camera</Text></FlexItem>
          <Camera><QrReader
-                         facingMode={'rear'}
+                         facingMode={'environment'}
                          interval={2000}
                          onError={handleErrorWebCam}
                          onScan={handleScanWebCam}
