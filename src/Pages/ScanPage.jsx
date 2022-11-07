@@ -14,13 +14,19 @@ const Container=styled.div`
 const HeadItem=styled.h2`
    margin: 20px 0;
    color: #fd4f4f;
+   @media screen and (max-width: 400px) {
+     font-size: 1rem;
+   }
 `
 const Camera=styled.div`
    height: 400px;
    width: 300px;
 `
 
-const Result=styled.h2``
+const Result=styled.h2`
+ @media screen and (max-width: 400px) {
+  font-size: 1rem;
+}`
 const Button=styled.button`
   margin-top:30px;
   align-items: center;
