@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { QrReader } from 'react-qr-reader';
 import styled from 'styled-components';
 
+
 const Container=styled.div`
     height: 80vh;
     width: 100%;
@@ -74,7 +75,7 @@ const Button=styled.button`
 const ScanPage = (props) => {
   const [data, setData] = useState('No result');
   
- 
+  
 
   return (
     <>
@@ -86,8 +87,9 @@ const ScanPage = (props) => {
                 onResult={(result, error) => {
                   if (!!result) {
                     setData(result?.text);
+                    
                   }
-
+                 
                   if (!!error) {
                     console.info(error);
                   }
@@ -100,13 +102,15 @@ const ScanPage = (props) => {
           <span style={{color:"#fd4f4f"}}>Your Result :</span> <span style={{color:"#2874F0"}}>{data}</span>
       </Result>
       {
-        data!=="No result" && 
+        data!=="No result"  && 
         <>
+        
           <a href={data} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}><Button> Visit That Site</Button></a>
-        </>
-      }
-      
+         
+        </>  
+        }
       </Container>
+      
     </>
   );
 };

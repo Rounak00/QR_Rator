@@ -3,7 +3,8 @@ import styled from "styled-components"
 import {Link} from "react-router-dom"
 import QRCode from 'qrcode'
 import { useState } from 'react'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ContentBox=styled.div`
@@ -61,7 +62,7 @@ const GeneratorPage = () => {
       margin:2
     },(err,url)=>{
       if(err){console.error(err)}
-      console.log(url);
+      toast("Your QR Code Generated")
       setQrcode(url)
     })
   }
@@ -74,7 +75,7 @@ const GeneratorPage = () => {
               type="url" 
               placeholder="e.g. https://google.com" 
               value={url}
-              onChange={(evt)=>setUrl(evt.target.value)}
+              onChange={(evt)=>setUrl(evt.target.value) }
               />
               <Link style={{"TextDecoration":"none"}}><Button onClick={generateQRCode}>Generate</Button></Link></FlexItem>
         <FlexItem>
@@ -88,6 +89,7 @@ const GeneratorPage = () => {
           </>}  
         </FlexItem>
       </ContentBox> 
+      <ToastContainer />
     </>
   )
 }
